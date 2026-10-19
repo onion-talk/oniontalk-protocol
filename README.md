@@ -21,33 +21,35 @@ Centralized messengers protect the body of your message while surrendering your 
 
 **OnionTalk is built to make censorship and mass surveillance mathematically impossible.**
 
-This repository contains the formal protocol specification and the bilingual manifesto ([`MANIFESTO.md`](./MANIFESTO.md)) detailing how OnionTalk achieves metadata-free, end-to-end encrypted communication over Tor v3 Hidden Services.
+This repository contains the formal protocol specification and the manifesto ([`MANIFESTO.md`](./MANIFESTO.md)) detailing how OnionTalk achieves metadata-free, end-to-end encrypted communication over Tor v3 Hidden Services.
 
 ---
 
-## 🔐 The 4-Layer Protocol Stack
+## 🔐 The 4-Layer Protocol Stack (`v2`)
 
 ### 1. Transport & Anonymity Layer (`Tor v3 SOCKS5h`)
 - Every client and relay operates over **Tor v3 Hidden Services** (`56-character Ed25519 .onion` addresses).
 - All outbound traffic is routed through `SOCKS5h` (`127.0.0.1:9050`), resolving `.onion` descriptors inside the Tor circuit with zero clearnet DNS leakage.
-- Connections use a 6-hop Tor rendezvous circuit (3 sender hops + 3 hidden service hops), hiding IP addresses from both peers and relays.
+- Relays bind their local HTTP port strictly to `127.0.0.1` and expose virtual port `80` only inside the 6-hop Tor rendezvous circuit, hiding IP addresses from both peers and relays.
 
-### 2. Service Discovery (`Bootstrap Seeds + Auto-Gossip PEX`)
+### 2. Authenticated Service Discovery (`Bootstrap Seeds + Ed25519 Gossip PEX`)
 - **Layer 1 (Bootstrap Seeds)**: New nodes contact a resilient set of multi-cloud `.onion` seed addresses on first boot.
-- **Layer 2 (Autonomous Peer Exchange / PEX)**: Every 30 seconds, relays exchange their active peer tables via `POST /api/v1/peers/announce` and `GET /api/v1/peers/list`, verifying liveness over Tor (`GET /health`) before admitting a node into the routing table.
-- **Layer 3 (Client Dynamic Mesh Sync)**: Clients fetch `/api/v1/peers/list` from any reachable relay and persist discovered `.onion` nodes locally. Even if all original bootstrap seeds are taken offline, clients continue operating through learned community relays.
+- **Layer 2 (Ed25519-Authenticated Peer Exchange / PEX)**: Relays sign all peer-to-peer requests (`/api/v1/peers/announce`, `/api/v1/messages/sync`, `/api/v1/messages/ack_sync`, `/api/v1/messages/ack_batch_sync`) with their node `Ed25519` private key (`X-Peer-Signature`). Before admitting any candidate node into `known_peers`, relays perform a reverse Tor handshake (`GET http://<candidate>.onion/health`) and verify that the remote node's `node_pubkey` matches the announcement signature.
+- **Layer 3 (Client Dynamic Mesh Sync)**: Clients fetch `/api/v1/peers/list` from any reachable relay and persist discovered `.onion` nodes locally inside their encrypted vault.
 
-### 3. Epidemic Gossip Distribution & ACK Preimage Lock
-- **Client Multi-Relay Fanout (`3x`)**: When sending a message, the client pushes the encrypted envelope in parallel to 3 distinct `.onion` relays (`POST /api/v1/messages/send`).
-- **Relay Gossip Replication**: Receiving relays asynchronously replicate the envelope (`X-Gossip-Sync: 1`) across their active peer table, deduplicating by `msg_id` (`UUIDv4`).
+### 3. Epidemic RAM-Only Gossip & Cryptographic ACK Preimage Lock
+- **RAM-Only Volatile Queue (`ram-volatile-ephemeral-ttl24h`)**: Relays never write messages to disk or SQLite. Envelopes reside strictly in volatile RAM with a 24-hour TTL and strict non-evicting per-user quotas.
+- **Ed25519 Inbox & ACK Challenge Authentication**: Clients must sign `ONIONTALK_AUTH_V2|<SCOPE>|<user_id>|<timestamp_ms>` with their 256-bit `Ed25519` identity key (`X-OnionTalk-Signature`) to poll `/api/v1/messages/inbox` or submit `/api/v1/messages/ack`.
 - **Cryptographic ACK Preimage Lock**:
-  - The sender generates a random 256-bit `ack_token` (sealed inside the E2EE payload) and places only `ack_hash = SHA-256(ack_token)` in the outer envelope header.
-  - Only the legitimate recipient can decrypt the payload, extract `ack_token`, and broadcast `POST /api/v1/messages/ack`.
-  - Relays verify `SHA-256(ack_token) == ack_hash` before purging the message from SQLite WAL storage, preventing malicious third parties from deleting undelivered messages.
+  - For every message, the sender generates a fresh 256-bit random `ack_token` via `SecureRandom` (sealed inside the `ChaCha20-Poly1305` ciphertext) and publishes only `ack_lock = SHA-256(ack_token)` in the outer envelope.
+  - Only the recipient possessing the private key can decrypt the envelope, extract `ack_token`, and submit `POST /api/v1/messages/ack`.
+  - Relays verify `SHA-256(ack_token) == ack_lock` in constant time (`hmac.compare_digest`) before purging the message from RAM across the mesh.
 
-### 4. Double-Layer Authenticated Encryption (`E2EE + Wire Key`)
-- **Inner E2EE Layer (`OfflineCryptoManager`)**: Ephemeral **X25519 ECDH** key agreement + **HKDF-SHA256** (`info = "TonyLoco-Offline-E2EE-v1"`) + **ChaCha20-Poly1305** (96-bit random nonce + 128-bit Poly1305 MAC).
-- **Outer Wire Layer (`EncryptionHelper`)**: **AES-256-GCM** envelope encryption prior to JSON serialization.
+### 4. End-to-End Authenticated Encryption (`__ENC_X25519_CHACHA20_V2__`)
+- **256-Bit Public-Key Identity**: Each user's Crypto ID (`@<64-hex-ed25519-pubkey>:<domain>.onion`) embeds their full 32-byte **Ed25519** public key, birationally mapped to **X25519** ($u = (1+y)/(1-y) \bmod 2^{255}-19$) per RFC 7748 / RFC 8032.
+- **Dual X25519 ECDH + HKDF-SHA256**: Every message generates a fresh ephemeral **X25519** keypair and combines `ECDH(ephemeral_priv, recipient_x25519_pub) || ECDH(sender_x25519_priv, recipient_x25519_pub)` through **HKDF-SHA256** (`info = "ONIONTALK_WIRE_V2_CHACHA20_POLY1305|<msgId>|<sender>|<recipient>"`).
+- **ChaCha20-Poly1305 AEAD + Ed25519 Sender Signature**: The payload (`ackToken | plaintext`) is sealed with **ChaCha20-Poly1305** (96-bit random nonce + 128-bit Poly1305 tag with AAD binding) and signed with the sender's **Ed25519** private key to guarantee both forward secrecy and sender authenticity.
+- **Local Vault at Rest**: On-device messages and identity seeds are stored inside **SQLCipher 4.5.4 (AES-256-CBC)** keyed via **Argon2id** (`64 MB RAM, 4 iterations, 4 lanes`).
 
 ---
 
