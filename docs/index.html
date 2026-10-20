@@ -1096,23 +1096,25 @@
             </ul>
           </div>
 
-          <div class="policy-clause" data-keywords="permissoes camera microfone audio notificacoes internet qr code exif">
-            <h3>3. Permissões do Dispositivo (Permissions Disclosure)</h3>
-            <p>O OnionTalk solicita apenas permissões estritamente necessárias para ações iniciadas pelo próprio usuário:</p>
+          <div class="policy-clause" data-keywords="permissoes camera microfone audio notificacoes internet qr code exif foreground service remote messaging special use flag secure">
+            <h3>3. Permissões do Dispositivo e Serviços em Primeiro Plano (Foreground Services)</h3>
+            <p>O OnionTalk solicita apenas permissões estritamente necessárias para ações iniciadas pelo próprio usuário e para manter o circuito P2P Tor ativo:</p>
             <ul>
-              <li><strong>Câmera (<code>android.permission.CAMERA</code>):</strong> Usada exclusivamente no aparelho quando o usuário escaneia um QR Code de contato (<code>@hash</code>) ou tira uma foto criptografada (com remoção automática de metadados EXIF/GPS antes da criptografia).</li>
+              <li><strong>Câmera (<code>android.permission.CAMERA</code>):</strong> Usada exclusivamente no aparelho quando o usuário escaneia um QR Code de contato (<code>@hash</code>) ou tira uma foto criptografada pelo menu do clipe (<code>📎</code>), com remoção automática de metadados EXIF/GPS antes da criptografia.</li>
               <li><strong>Microfone (<code>android.permission.RECORD_AUDIO</code>):</strong> Usado exclusivamente quando o usuário grava uma nota de voz criptografada ponta-a-ponta.</li>
-              <li><strong>Notificações (<code>android.permission.POST_NOTIFICATIONS</code>):</strong> Usada apenas para alertas locais no aparelho quando chegam novos pacotes criptografados.</li>
-              <li><strong>Internet (<code>android.permission.INTERNET</code>):</strong> Usada exclusivamente pelo daemon Tor embutido (<code>libtor.so</code>).</li>
+              <li><strong>Serviços em Primeiro Plano (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_REMOTE_MESSAGING</code> e <code>FOREGROUND_SERVICE_SPECIAL_USE</code>):</strong> Utilizados pelo <code>OnionKeepAliveService</code> ("Modo Sempre Conectado") para manter o daemon nativo Tor v3 (<code>libtor.so</code> em <code>127.0.0.1:9050</code>) ativo em segundo plano e entregar mensagens de texto, confirmações de leitura (<code>✓✓</code>) e mídia criptografada de um dispositivo para outro em tempo real sem depender do Google Firebase (FCM) e sem criar VPN global no aparelho.</li>
+              <li><strong>Notificações (<code>android.permission.POST_NOTIFICATIONS</code>):</strong> Usada para alertas locais de novas mensagens (com opção de silenciar por conversa) e para exibir a notificação visível do serviço <em>OnionTalk Sempre Conectado</em>.</li>
+              <li><strong>Bloqueio de Captura de Tela Opcional (<code>FLAG_SECURE</code>):</strong> Por padrão, o bloqueio de gravação/captura de tela vem <strong>desativado</strong> para permitir gravações e demonstrações pelo usuário, podendo ser ativado a qualquer momento em <strong>Configurações &rarr; Segurança &rarr; Bloquear captura de tela</strong>.</li>
             </ul>
           </div>
 
-          <div class="policy-clause" data-keywords="retencao exclusao dados deletar conta burn queima bilateral ram">
-            <h3>4. Retenção e Exclusão Instantânea de Dados</h3>
+          <div class="policy-clause" data-keywords="retencao exclusao dados deletar conta burn queima bilateral ram timer contatos">
+            <h3>4. Retenção, Mensagens Efêmeras e Exclusão Instantânea de Dados</h3>
             <p>O usuário detém controle total e imediato sobre a retenção e destruição dos seus dados:</p>
             <ul>
               <li><strong>Memória Volátil nos Relays:</strong> Envelopes em trânsito ficam apenas em memória RAM volátil até a confirmação criptográfica de entrega (<code>ACK</code>) ou expiração automática em 24h, sendo imediatamente descartados.</li>
-              <li><strong>Queima Bilateral (🔥):</strong> O botão de chama no topo de qualquer conversa destrói e sobrescreve o histórico de mensagens tanto no aparelho local quanto no aparelho do contato.</li>
+              <li><strong>Mensagens com Timer (⏱️) e Embaralhar Conversa (🔥 Burn):</strong> Pelo menu de 3 pontos (<code>⋮</code>) do chat, o usuário pode ativar autodestruição automática por tempo (30s, 1m, 5m ou 1h após leitura) ou embaralhar/destruir bilateralmente o histórico nos dois aparelhos.</li>
+              <li><strong>Apagar Conversa vs. Biblioteca de Contatos:</strong> A opção <em>Apagar conversa</em> limpa o histórico de mensagens daquele chat preservando o contato salvo na aba <strong>Contatos</strong> para futuras conversas sem precisar reescanear o QR Code.</li>
               <li><strong>Exclusão Total da Conta:</strong> Em <strong>Configurações &rarr; Excluir Conta e Destruir Dados</strong> (ou digitando a Senha de Coação), todo o banco SQLCipher e as chaves locais sofrem <em>shredding</em> criptográfico irreversível.</li>
             </ul>
           </div>
@@ -1221,3 +1223,4 @@
   </script>
 </body>
 </html>
+
