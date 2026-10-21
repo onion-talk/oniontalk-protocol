@@ -1104,6 +1104,7 @@
               <li><strong>Microfone (<code>android.permission.RECORD_AUDIO</code>):</strong> Usado exclusivamente quando o usuário grava uma nota de voz criptografada ponta-a-ponta.</li>
               <li><strong>Serviços em Primeiro Plano (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_REMOTE_MESSAGING</code> e <code>FOREGROUND_SERVICE_SPECIAL_USE</code>):</strong> Utilizados pelo <code>OnionKeepAliveService</code> ("Modo Sempre Conectado") para manter o daemon nativo Tor v3 (<code>libtor.so</code> em <code>127.0.0.1:9050</code>) ativo em segundo plano e entregar mensagens de texto, confirmações de leitura (<code>✓✓</code>) e mídia criptografada de um dispositivo para outro em tempo real sem depender do Google Firebase (FCM) e sem criar VPN global no aparelho.</li>
               <li><strong>Notificações (<code>android.permission.POST_NOTIFICATIONS</code>):</strong> Usada para alertas locais de novas mensagens (com opção de silenciar por conversa) e para exibir a notificação visível do serviço <em>OnionTalk Sempre Conectado</em>.</li>
+              <li><strong>Biometria Opcional (<code>android.permission.USE_BIOMETRIC</code>):</strong> Desativada por padrão. Quando ativada pelo usuário em <strong>Configurações &rarr; Segurança</strong>, utiliza exclusivamente o chip seguro <code>AndroidKeyStore</code> local (<code>BiometricPrompt.CryptoObject</code>) sem jamais acessar ou transmitir dados biométricos, sendo desarmada temporariamente sempre que o usuário aciona o cadeado manual (<code>🔒</code>) contra coação física.</li>
               <li><strong>Bloqueio de Captura de Tela Opcional (<code>FLAG_SECURE</code>):</strong> Por padrão, o bloqueio de gravação/captura de tela vem <strong>desativado</strong> para permitir gravações e demonstrações pelo usuário, podendo ser ativado a qualquer momento em <strong>Configurações &rarr; Segurança &rarr; Bloquear captura de tela</strong>.</li>
             </ul>
           </div>
@@ -1223,4 +1224,5 @@
   </script>
 </body>
 </html>
+
 
