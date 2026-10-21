@@ -72,3 +72,4 @@ Para dúvidas sobre esta Política de Privacidade ou relatórios de segurança:
 - **Relay Ephemeral RAM:** Encrypted envelopes in transit are held strictly in volatile memory until cryptographic delivery acknowledgment (`ACK`) or 24-hour TTL expiration, and are immediately purged.
 - **Optional Read Receipts (`✓✓`) & Ephemeral Timers (`⏱️`):** Users can toggle read receipts in **Settings ➔ Security** and set per-message self-destruct timers (`30s` to `24h`) from the chat `⋮` menu.
 - **Complete User Deletion:** Users can permanently shred individual chat histories, trigger a **Bilateral Burn (`🔥`)** from the chat `⋮` menu, or destroy their entire account and local SQLCipher AES-256 database at any time via **Settings ➔ Security ➔ Delete my account**.
+
