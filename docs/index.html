@@ -1442,7 +1442,7 @@
               <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
               <line x1="12" y1="18" x2="12.01" y2="18"></line>
             </svg>
-            <span>APK Relay Server Android (v1.4.2 · Zero-Leak)</span>
+            <span>APK Relay Server Android (v1.4.3 · Zero-Leak)</span>
           </a>
           <a href="#malha" class="btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -1452,6 +1452,14 @@
               <line x1="6" y1="18" x2="6.01" y2="18"></line>
             </svg>
             <span data-i18n="hero_btn_node">Subir Relay Docker (&lt;60MB)</span>
+          </a>
+          <a href="#web-container" class="btn-secondary" style="border-color: rgba(56, 189, 248, 0.45); color: #38BDF8;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span>Web Client + Relay Docker (v1.4.4)</span>
           </a>
           <a href="#privacy" class="btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -1625,7 +1633,7 @@
               </video>
             </div>
             <h3 id="promo-video-title" style="font-size: 18px; font-weight: 700; margin-bottom: 6px;">Vídeo Promo Oficial v1.4.2: Mensagens com Senha, Cofre &amp; Malha Tor (1080p)</h3>
-            <p id="promo-video-desc" style="font-size: 13.5px; color: var(--text-secondary);">Propaganda oficial mostrando o envio de mensagens em tempo real, mensagens protegidas por senha, tranca de conversa, favoritos por toque longo e auto-lock de 15s.</p>
+            <p id="promo-video-desc" style="font-size: 13.5px; color: var(--text-secondary);">Locução feminina natural de estúdio apresentando a barra flutuante estilo Telegram, Grupos Criptografados, figurinhas WebP, mensagens com senha (auto-tranca em 15s), nível de Amigo e download direto do Server Relay APK.</p>
           </div>
           <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
             <button type="button" class="chip-btn active-timer" id="vid-btn-v142-pt" onclick="switchPromoVideo('v142-pt')">🎬 Promo v1.4.2 (PT-BR)</button>
@@ -1646,8 +1654,8 @@
             </div>
             <div style="background: #070B14; border: 1px solid var(--border-hairline); border-radius: 12px; padding: 16px; margin-bottom: 12px;">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-                <span class="mono" style="font-size: 12px; color: var(--brand-emerald); font-weight: 700;">NOVIDADES DA RELEASE V1.4.4 (BUILD 28)</span>
-                <span class="badge-yes">Play Store Ready · vc22</span>
+                <span class="mono" style="font-size: 12px; color: var(--brand-emerald); font-weight: 700;">NOVIDADES DA RELEASE V1.4.2 (BUILD 26)</span>
+                <span class="badge-yes">Play Store Ready · vc26</span>
               </div>
               <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--text-secondary);">
                 <li style="display: flex; gap: 8px;">
@@ -1971,7 +1979,7 @@
           <div>
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px;">
               <span class="section-eyebrow" style="margin-bottom: 0; color: #38BDF8;">APP SECUNDÁRIO ANDROID · org.oniontalk.relaynode</span>
-              <span class="badge-yes" style="border-color: rgba(6, 182, 212, 0.4); color: #67E8F9; background: rgba(6, 182, 212, 0.12);">Relay v1.4.2 · Zero-Leak</span>
+              <span class="badge-yes" style="border-color: rgba(6, 182, 212, 0.4); color: #67E8F9; background: rgba(6, 182, 212, 0.12);">Relay v1.4.3 · Zero-Leak</span>
             </div>
             <h3 style="margin-bottom: 6px;">2. Subir Nó Relay Dentro do Android (App Secundário)</h3>
             <p style="font-size: 13.5px;">Transforme qualquer celular Android (4G/5G/Wi-Fi, mesmo atrás de CGNAT) em um servidor <strong>Tor v3 Hidden Service</strong> soberano (<code>127.0.0.1:9055 &rarr; :8088</code>). Instala lado a lado com o mensageiro principal sem conflito de portas, permite escolher apenas o Nome do Nó e faz Auto-Join 100% anônimo nos 17 seeds (zero coleta de IP, modelo do celular ou latitude/longitude).</p>
@@ -1987,7 +1995,36 @@
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>
                 </svg>
-                <span>Baixar OnionTalk Relay APK v1.4.2 (16.4 MB)</span>
+                <span>Baixar OnionTalk Relay APK v1.4.3 (16.4 MB)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card span-12" id="web-container" style="border-color: rgba(56, 189, 248, 0.45); grid-column: span 12;">
+          <div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px;">
+              <span class="section-eyebrow" style="margin-bottom: 0; color: #38BDF8;">DESKTOP &amp; WEB CLIENT + RELAY TOR V3 · eriktonon/oniontalk-web:latest</span>
+              <span class="badge-yes" style="border-color: rgba(56, 189, 248, 0.45); color: #38BDF8; background: rgba(56, 189, 248, 0.12);">Rust Black-Box · CIS Level 2 Hardened · v1.4.4-build28</span>
+            </div>
+            <h3 style="margin-bottom: 6px;">3. Rodar OnionTalk Web Client + Nó Relay Tor v3 (Windows / Linux / macOS)</h3>
+            <p style="font-size: 13.5px;">Execute o cliente web completo do OnionTalk + nó Relay Tor v3 embutido localmente em <code>http://127.0.0.1:8420</code> via Docker. Compilado nativamente em Rust (binário <code>strip=symbols</code> + <code>UPX --lzma</code>, <code>PR_SET_DUMPABLE=0</code>, cofre <code>Argon2id 64 MiB + AES-256-GCM</code>, áudios cifrados em repouso <code>OTATT1</code>, handshake <code>Ed25519 + X25519 X3DH</code> e transporte local selado com <code>ChaCha20</code>).</p>
+          </div>
+          <div>
+            <div class="code-snippet mono" style="margin-bottom: 12px; color: #BAE6FD;">
+              docker run -d --name oniontalk-web --restart unless-stopped --read-only --cap-drop ALL --security-opt no-new-privileges:true --pids-limit 128 --memory 512m --tmpfs /tmp:rw,noexec,nosuid,nodev,size=64m -p 127.0.0.1:8420:8420 -v oniontalk_web_vault:/data -v oniontalk_web_tor:/var/lib/tor eriktonon/oniontalk-web:latest
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <a href="docker-compose.web.yml" download class="btn-primary" style="background: #38BDF8; color: #021318;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Baixar docker-compose.web.yml</span>
+              </a>
+              <a href="https://hub.docker.com/r/eriktonon/oniontalk-web" target="_blank" rel="noopener" class="btn-secondary" style="border-color: rgba(56, 189, 248, 0.45); color: #38BDF8;">
+                <span>Ver no Docker Hub (eriktonon/oniontalk-web)</span>
               </a>
             </div>
           </div>
@@ -2459,7 +2496,7 @@
         "v142-pt": {
           url: "video/OnionTalk-v1.4.1-Promo-Oficial-PT.mp4",
           title: "Vídeo Promo Oficial v1.4.2: Mensagens com Senha, Cofre & Malha Tor (1080p)",
-          desc: "Propaganda oficial mostrando o envio de mensagens em tempo real, mensagens protegidas por senha, tranca de conversa, favoritos por toque longo e auto-lock de 15s.",
+          desc: "Locução feminina natural de estúdio apresentando a barra flutuante estilo Telegram, Grupos Criptografados, figurinhas WebP, mensagens com senha (auto-tranca em 15s), nível de Amigo e download direto do Server Relay APK.",
           aspect: "16 / 9"
         },
         "v142-en": {
