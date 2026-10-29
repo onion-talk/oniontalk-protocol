@@ -42,7 +42,7 @@ sequenceDiagram
 
     NewNode->>Tor: Inicializa tor-daemon (.onion) + par de chaves Ed25519 do nó
     NewNode->>Seed: POST /api/v1/peers/announce (Assinado com X-Peer-Signature Ed25519)
-    Seed-->>NewNode: 200 OK {"status": "registered", "peers": ["pve2.onion", "pve4.onion", "aws.onion", "oci.onion"]}
+    Seed-->>NewNode: 200 OK {"status": "registered", "peers": ["Primary Seed #1.onion", "Secondary Seed #2.onion", "seed3.onion", "seed4.onion"]}
     Note over Seed: Inicia verificação Anti-Sybil em background
     Seed->>NewNode: GET http://novo...onion/health (via circuito Tor SOCKS5h)
     NewNode-->>Seed: 200 OK {"status": "healthy", "node_pubkey": "<64-hex-ed25519>"}
@@ -75,10 +75,10 @@ flowchart LR
     end
 
     subgraph Mesh["🕸️ Malha Federada Tor (RAM-Only Relays)"]
-        R1["🧅 Gateway 1 (PVE2 Master)"]
-        R2["🧅 Gateway 2 (PVE4 Worker)"]
-        R3["🧅 Gateway 3 (AWS EKS)"]
-        R4["🧅 Gateway 4 (Oracle Cloud)"]
+        R1["🧅 Gateway 1 (Primary Seed #1)"]
+        R2["🧅 Gateway 2 (Secondary Seed #2)"]
+        R3["🧅 Gateway 3 (Cloud EKS)"]
+        R4["🧅 Gateway 4 (South America Relay #4)"]
         R1 -->|"Gossip /messages/sync (Ed25519 Signed)"| R2
         R1 -->|"Gossip /messages/sync (Ed25519 Signed)"| R3
         R1 -->|"Gossip /messages/sync (Ed25519 Signed)"| R4
@@ -119,7 +119,7 @@ flowchart LR
 | :--- | :--- | :--- |
 | **Bloqueio de DNS (DNS Sinkholing / Poisoning)** | Operadoras bloqueiam a resolução do domínio da API central. | **Zero DNS Local (`SOCKS5h ATYP=0x03`)**: O Android nunca resolve nomes no DNS do sistema; o hostname `.onion` trafega até o daemon Tor local, que resolve o descritor criptograficamente dentro da rede Tor. |
 | **Bloqueio de IP por Firewall Estatal (BGP / DPI)** | Governos bloqueiam as faixas de IP dos servidores da empresa. | **Sem IP Exposto (Tor Rendezvous + Localhost Bind)**: Os relays escutam apenas em `127.0.0.1` e no circuito Tor de 6 saltos; nem cliente nem servidor conhecem o IP um do outro. |
-| **Derrubada de Servidor Central (Takedown / DDoS)** | Se o cluster principal cair, o aplicativo inteiro para de funcionar. | **Malha Multi-Cloud & P2P ELB**: Failover automático entre múltiplos `.onion` independentes (Homelab Proxmox, AWS, Oracle Cloud, Alwaysdata Paris e nós comunitários). |
+| **Derrubada de Servidor Central (Takedown / DDoS)** | Se o cluster principal cair, o aplicativo inteiro para de funcionar. | **Malha Multi-Cloud & P2P ELB**: Failover automático entre múltiplos `.onion` independentes (Dedicated Bare-Metal, Multi-Region Cloud Relays, Western Europe Relay e nós comunitários). |
 | **Ataque de Nó Malicioso (Injeção / ACK Spoofing / Inbox Snooping)** | Um servidor malicioso tenta ler envelopes, injetar comandos ou apagar mensagens. | **X25519 + ChaCha20-Poly1305 + Assinatura Ed25519 + Preimage Lock**: Chaves privadas nunca saem do aparelho; `/inbox` e `/ack` exigem assinatura `Ed25519` do dono da chave; `ACKs` exigem a pré-imagem `SHA-256(ack_token) == ack_lock`. |
 | **Coerção Física e Perícia Forense no Aparelho** | Peritos extraem páginas SQLite deletadas, thumbnails EXIF ou obrigam o desbloqueio. | **Defesa Anti-Forense Completa**: Cofre SQLCipher AES-256-CBC + Argon2id, `PRAGMA secure_delete=ON` + sobrescrita de B-Tree + `VACUUM`, remoção de 100% de EXIF/GPS com *LSB jitter*, `FLAG_SECURE`, *Burn Chat* remoto assinado e *Duress Wipe* DoD 2-pass. |
 
