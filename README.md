@@ -18,11 +18,11 @@
 
 ---
 
-## 🚀 What's New in `v1.6.0` (`versionCode = 54` / Build 54) & Relay Node `v1.6.0` (100% Rust Native `oniontalk-relay-rs`) — Sub-700ms OnionVoice V1 PQC Voice Calls, Pop-on-Read Voice Stream, Sovereign PQC Groups, Real Web Mic Recording & 35-Node Zero-Leak Mesh
+## 🚀 What's New in `v1.6.3` (`versionCode = 59` / Build 59) & Relay Node `v1.6.0` (100% Rust Native `oniontalk-relay-rs`) — Sub-700ms OnionVoice V1 PQC Voice Calls, Pop-on-Read Voice Stream, Sovereign PQC Groups, Real Web Mic Recording & 35-Node Zero-Leak Mesh
 
-- **📦 Direct Signed APK Downloads & Web Container (`v1.6.0` — Latest Release Build 54)**:
-  - **Main Messenger APK (`org.oniontalk.messenger` `v1.6.0` Build 54)**: [**Download `OnionTalk.apk` (latest)**](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/SHA256SUMS.txt))
-  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.5.2` Build 11)**: [**Download `OnionTalk-RelayNode.apk` (latest)**](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/OnionTalk-RelayNode.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/SHA256SUMS.txt))
+- **📦 Direct Signed APK Downloads & Web Container (`v1.6.3` — Latest Release Build 59)**:
+  - **Main Messenger APK (`org.oniontalk.messenger` `v1.6.3` Build 59)**: [**Download `OnionTalk.apk` (latest)**](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/SHA256SUMS.txt))
+  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.6.3` Build 12)**: [**Download `OnionTalk-RelayNode.apk` (latest)**](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/OnionTalk-RelayNode.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/SHA256SUMS.txt))
   - **🐳 Desktop & Web Container + Embedded Tor v3 Relay (`Windows / Linux / macOS`)**: [**`eriktonon/oniontalk-web:latest`**](https://hub.docker.com/r/eriktonon/oniontalk-web) ![Docker tag](https://img.shields.io/docker/v/eriktonon/oniontalk-web?sort=semver&label=tag&style=flat-square) — Self-contained Rust Black-Box Web Messenger + active Tor v3 Hidden Service Relay listening on `127.0.0.1:8420`.
   - **🦀 100% Rust Native Relay Container (`oniontalk-relay-rs v1.6.0`)**: [**`eriktonon/oniontalk:latest`**](https://hub.docker.com/r/eriktonon/oniontalk) — Zero-Python Tokio/Axum + Sharded `DashMap` relay node (`11.9 MiB` RAM, `-92%` footprint) with isochronous `/api/v1/voice/stream`.
 
