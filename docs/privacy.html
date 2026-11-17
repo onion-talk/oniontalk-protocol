@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OnionTalk — Mensageiro privado sobre Tor v3 · Política de Privacidade</title>
-  <meta name="description" content="Mensageiro sem número de telefone, sem e-mail e sem servidor central. Funciona sobre a rede Tor v3, com criptografia pós-quântica híbrida e relays que qualquer pessoa pode operar." />
+  <title>Política de Privacidade e Arquitetura Zero-PII | OnionTalk</title>
+  <meta name="description" content="Política de Privacidade oficial do OnionTalk (org.oniontalk.messenger): zero coleta de telefone, e-mail, IP ou contatos, cofre SQLCipher AES-256 e rede Tor v3." />
   <meta name="theme-color" content="#05080F" />
   <meta name="color-scheme" content="dark" />
   <link rel="icon" type="image/png" href="icon-512.png" />
@@ -12,7 +12,31 @@
   <meta property="og:title" content="OnionTalk — Private messenger on Tor v3" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="No phone number, no email, no central server. Runs on the Tor v3 network with hybrid post-quantum encryption and relays anyone can operate." />
-  <meta property="og:image" content="https://onion-talk.github.io/oniontalk-demo/icon-512.png" />
+  <meta property="og:url" content="https://oniontalk.co/privacy.html" />
+  <meta property="og:site_name" content="OnionTalk" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://oniontalk.co/icon-512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Política de Privacidade e Arquitetura Zero-PII | OnionTalk" />
+  <meta name="twitter:description" content="Política de Privacidade oficial do OnionTalk (org.oniontalk.messenger): zero coleta de telefone, e-mail, IP ou contatos." />
+  <meta name="twitter:image" content="https://oniontalk.co/icon-512.png" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://oniontalk.co/privacy.html" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://oniontalk.co/sitemap.xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://oniontalk.co/privacy.html#webpage",
+    "url": "https://oniontalk.co/privacy.html",
+    "name": "Política de Privacidade e Arquitetura Zero-PII | OnionTalk",
+    "description": "Política de Privacidade oficial do aplicativo OnionTalk (org.oniontalk.messenger) na Google Play Store: zero coleta de dados pessoais (Zero PII), sem número de telefone, sem e-mail e criptografia pós-quântica sobre Tor v3.",
+    "inLanguage": "pt-BR",
+    "isPartOf": { "@id": "https://oniontalk.co/#website" }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1513,7 +1537,7 @@
     <nav class="mobile-subnav" aria-label="Navegação Rápida Mobile">
       <a href="#vitrine">Telas &amp; Vídeo</a>
       <a href="#arquitetura">Arquitetura</a>
-      <a href="#malha">20 Nós &amp; Relay Android</a>
+      <a href="#malha">35 Nós &amp; Relay Android</a>
       <a href="#comparativo">Comparativo</a>
       <a href="#privacy">Privacidade</a>
     </nav>
@@ -1525,7 +1549,7 @@
       <div>
         <div class="status-pill">
           <span class="status-dot" aria-hidden="true"></span>
-          <span data-i18n="hero_badge">20 relays Tor v3 ativos em 8 países</span>
+          <span data-i18n="hero_badge">35 relays Tor v3 ativos em 8 países</span>
         </div>
 
         <h1 data-i18n="hero_title">
@@ -1551,7 +1575,7 @@
           </a>
           <a href="https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk" target="_blank" rel="noopener" class="btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            <span><span data-i18n="hero_btn_apk">APK Universal Assinado</span></span>
+            <span><span data-i18n="hero_btn_apk">APK Universal Assinado (v1.7.4)</span></span>
           </a>
         </div>
 
@@ -1790,23 +1814,113 @@
 
       <!-- 20 Real High-Res Android & Web Container Screenshots Kit Grid -->
       <div class="screenshots-grid" id="screenshots-gallery">
+        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/v174-03-chat-audio-hd-1x.png', 'Chat Onion Mesh v1.7.4: Áudio HD AAC 48kHz Zero-Metadata e Modo Temporário de Escuta Única (1x)')">
+          <div class="shot-img-wrap">
+            <img src="screenshots/v174-03-chat-audio-hd-1x.png" alt="Chat Onion Mesh Áudio HD e Escuta Única 1x" width="360" height="780" loading="lazy" />
+          </div>
+          <div class="shot-caption">
+            <strong>1. Chat Onion Mesh &amp; Áudio HD 1x</strong>
+            <span>Voz AAC 48 kHz sem metadados com gravação temporária de escuta única (1x).</span>
+          </div>
+        </div>
+
+        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/v174-10-dados-grupo-onionmesh.png', 'Painel Dados do Grupo (Onion Mesh v1.7.4): Regras do Admin, Ações Rápidas, Queimar e Membros Protegidos')">
+          <div class="shot-img-wrap">
+            <img src="screenshots/v174-10-dados-grupo-onionmesh.png" alt="Dados do Grupo Onion Mesh OnionTalk" width="360" height="780" loading="lazy" />
+          </div>
+          <div class="shot-caption">
+            <strong>2. Painel Dados do Grupo (Onion Mesh)</strong>
+            <span>Layout unificado com regras do Admin, ações rápidas, Queimar e membros sem expor +55.</span>
+          </div>
+        </div>
+
+        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/v174-09-aba-grupos-50-pessoas.png', 'Campanha Inicial: 1 Grupo Pós-Quântico Grátis de até 50 Pessoas e Apoio Comunitário')">
+          <div class="shot-img-wrap">
+            <img src="screenshots/v174-09-aba-grupos-50-pessoas.png" alt="Aba Grupos Privados até 50 Pessoas OnionTalk" width="360" height="780" loading="lazy" />
+          </div>
+          <div class="shot-caption">
+            <strong>3. 1 Grupo Grátis (até 50 Pessoas)</strong>
+            <span>Crie gratuitamente 1 grupo pós-quântico de até 50 membros na campanha inicial.</span>
+          </div>
+        </div>
+
+        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/v174-05-grupo-pqc-figurinhas.png', 'Grupo Pós-Quântico ML-KEM-768 com Painel Acoplado de Figurinhas 512x512 Sem EXIF/GPS')">
+          <div class="shot-img-wrap">
+            <img src="screenshots/v174-05-grupo-pqc-figurinhas.png" alt="Grupo PQC e Figurinhas OnionTalk" width="360" height="780" loading="lazy" />
+          </div>
+          <div class="shot-caption">
+            <strong>4. Grupos PQC &amp; Figurinhas 512×512</strong>
+            <span>Identificação anti-spoofing por membro e teclado acoplado de figurinhas zero-rastro.</span>
+          </div>
+        </div>
+
+        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/v174-04-mensagem-selada-senha.png', 'Mensagem Selada com Senha Individual (AES-256-GCM): Tempo Visível Configurável e Autodestruição')">
+          <div class="shot-img-wrap">
+            <img src="screenshots/v174-04-mensagem-selada-senha.png" alt="Modal Mensagem Selada com Senha OnionTalk" width="360" height="780" loading="lazy" />
+          </div>
+          <div class="shot-caption">
+            <strong>5. Mensagem Selada com Senha</strong>
+            <span>Escolha o tempo visível após abrir (10s, 30s, 1m, 5m ou até trancar) + autodestruição.</span>
+          </div>
+        </div>
+
+        <div class="shot-card" data-category="vault" onclick="openScreenshotModal('screenshots/v174-01-cofre-login.png', 'Cofre Local SQLCipher AES-256 (Obsidian &amp; Cobalt Shield) com Biometria e 4 Idiomas')">
+          <div class="shot-img-wrap">
+            <img src="screenshots/v174-01-cofre-login.png" alt="Tela de Login do Cofre OnionTalk v1.7.4" width="360" height="780" loading="lazy" />
+          </div>
+          <div class="shot-caption">
+            <strong>6. Cofre SQLCipher &amp; Biometria</strong>
+            <span>Acesso local em PT/EN/ES/RU com limite de tentativas e wipe anti-coação.</span>
+          </div>
+        </div>
+
+        <div class="shot-card" data-category="chat" onclick="openScreenshotModal('screenshots/v174-02-lista-conversas.png', 'Lista Limpa Onion Mesh: Status Tor em Tempo Real, Criptografia Ativa e Atalhos QR')">
+          <div class="shot-img-wrap">
+            <img src="screenshots/v174-02-lista-conversas.png" alt="Lista de Conversas Onion Mesh OnionTalk" width="360" height="780" loading="lazy" />
+          </div>
+          <div class="shot-caption">
+            <strong>7. Lista de Conversas Onion Mesh</strong>
+            <span>Conexão Tor Sempre Conectado, selos de criptografia e navegação limpa em 4 abas.</span>
+          </div>
+        </div>
+
+        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/v174-06-configuracoes-subcategorias.png', 'Novo Menu de Configurações Organizado em Subcategorias Limpas')">
+          <div class="shot-img-wrap">
+            <img src="screenshots/v174-06-configuracoes-subcategorias.png" alt="Menu de Configurações em Subcategorias OnionTalk" width="360" height="780" loading="lazy" />
+          </div>
+          <div class="shot-caption">
+            <strong>8. Configurações em Subcategorias</strong>
+            <span>Acesso organizado a Conta, Aparência, Privacidade, Rede Tor, Dados e Nó Relay.</span>
+          </div>
+        </div>
+
+        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/v174-07-temas-onionmesh.png', 'Temas Procedurais Assinados: Onion Mesh, Cofre Cobalto, Escudo PQC, Noite Tor e Stealth OLED')">
+          <div class="shot-img-wrap">
+            <img src="screenshots/v174-07-temas-onionmesh.png" alt="Temas Personalizados Onion Mesh OnionTalk" width="360" height="780" loading="lazy" />
+          </div>
+          <div class="shot-caption">
+            <strong>9. Temas Assinados Onion Mesh</strong>
+            <span>6 temas escuros renderizados em Canvas local com zero custo de bateria ou rede.</span>
+          </div>
+        </div>
+
+        <div class="shot-card" data-category="vault" onclick="openScreenshotModal('screenshots/v174-08-identidade-qr-convite.png', 'Conta e Identidade: QR Code Ed25519, Link Direto oniontalk.co/add/# Zero-Rastro e Backup Seed')">
+          <div class="shot-img-wrap">
+            <img src="screenshots/v174-08-identidade-qr-convite.png" alt="Identidade QR e Convite Zero-Rastro OnionTalk" width="360" height="780" loading="lazy" />
+          </div>
+          <div class="shot-caption">
+            <strong>10. Identidade QR &amp; Convite Direto</strong>
+            <span>Link compartilhável que abre direto em Novo Contato sem vazar o ID para servidores HTTP.</span>
+          </div>
+        </div>
+
         <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/20-onionvoice-pqc-call-v157.png', 'Chamada de Voz Pós-Quântica (OnionVoice): ML-KEM-768 + X25519 via Stream Isócrono Pop-on-Read')">
           <div class="shot-img-wrap">
             <img src="screenshots/20-onionvoice-pqc-call-v157.png" alt="Chamada de Voz Pós-Quântica OnionVoice OnionTalk" width="360" height="780" loading="lazy" />
           </div>
           <div class="shot-caption">
-            <strong>1. Chamada de Voz PQC (OnionVoice)</strong>
-            <span>Voz sub-700ms ML-KEM-768 + X25519 com stream isócrono Pop-on-Read e DSP WSOLA/CoDel anti-corte.</span>
-          </div>
-        </div>
-
-        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/21-pqc-groups-founder-v157.png', 'Grupos PQC Soberanos: Lista de Critérios do Admin (__CTRL_GROUP_META_PQC_V1__), Certificado FounderPass e Exclusão Soberana')">
-          <div class="shot-img-wrap">
-            <img src="screenshots/21-pqc-groups-founder-v157.png" alt="Grupos PQC Soberanos e FounderPass OnionTalk" width="360" height="780" loading="lazy" />
-          </div>
-          <div class="shot-caption">
-            <strong>2. Grupos PQC, Critérios &amp; FounderPass</strong>
-            <span>Critérios Admin assinados em Ed25519, certificado offline FounderPass e exclusão soberana local.</span>
+            <strong>11. Chamada de Voz PQC (OnionVoice)</strong>
+            <span>Voz sub-500ms ML-KEM-768 + X25519 com sensor físico de proximidade e SAS de 4 emojis.</span>
           </div>
         </div>
 
@@ -1815,7 +1929,7 @@
             <img src="screenshots/18-relay-node-android-v101.png" alt="OnionTalk Relay Motor 100% Rust Nativo e 35 Nós Tor v3" width="360" height="780" loading="lazy" />
           </div>
           <div class="shot-caption">
-            <strong>3. Relay 100% Rust Nativo &amp; 35 Nós</strong>
+            <strong>12. Relay 100% Rust Nativo &amp; 35 Nós</strong>
             <span>Motor Tokio/Axum + DashMap (0% Python, 11.9 MiB RAM) sincronizado em 35 nós Tor v3.</span>
           </div>
         </div>
@@ -1825,38 +1939,8 @@
             <img src="screenshots/19-oniontalk-web-container.png" alt="OnionTalk Web e Desktop Container" width="360" height="780" loading="lazy" />
           </div>
           <div class="shot-caption">
-            <strong>4. Web &amp; Desktop Container</strong>
+            <strong>13. Web &amp; Desktop Container</strong>
             <span>Gravação real de voz no navegador, chamada PQC OnionVoice e Relay Tor v3 em :8420.</span>
-          </div>
-        </div>
-
-        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/11-locked-message-e2ee.png', 'Mensagem Protegida com Senha Individual (__LOCKED_MSG_V1__)')">
-          <div class="shot-img-wrap">
-            <img src="screenshots/11-locked-message-e2ee.png" alt="Bolha de Mensagem Protegida com Senha OnionTalk" width="360" height="780" loading="lazy" />
-          </div>
-          <div class="shot-caption">
-            <strong>5. Mensagem com Senha Individual</strong>
-            <span>Bolha criptografada que exige senha dedicada para revelar o texto.</span>
-          </div>
-        </div>
-
-        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/12-unlock-message-modal.png', 'Modal de Desbloqueio de Mensagem com Senha e Cache de Sessão')">
-          <div class="shot-img-wrap">
-            <img src="screenshots/12-unlock-message-modal.png" alt="Desbloqueio de Mensagem com Senha OnionTalk" width="360" height="780" loading="lazy" />
-          </div>
-          <div class="shot-caption">
-            <strong>6. Desbloqueio Instantâneo</strong>
-            <span>Destrava na 1ª tentativa com teclado privado sem histórico.</span>
-          </div>
-        </div>
-
-        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/13-locked-chat-pin-home.png', 'Lista Limpa: Favoritos Fixados (📌), Conversa Trancada e Toque Longo')">
-          <div class="shot-img-wrap">
-            <img src="screenshots/13-locked-chat-pin-home.png" alt="Tela Inicial Limpa com Favorito e Conversa Trancada" width="360" height="780" loading="lazy" />
-          </div>
-          <div class="shot-caption">
-            <strong>7. Lista Limpa &amp; Toque Longo</strong>
-            <span>Segure na conversa para favoritar no topo, renomear ou queimar.</span>
           </div>
         </div>
 
@@ -1865,28 +1949,8 @@
             <img src="screenshots/14-lock-conversation-modal.png" alt="Modal Trancar Conversa com Senha OnionTalk" width="360" height="780" loading="lazy" />
           </div>
           <div class="shot-caption">
-            <strong>8. Conversa Trancada com Senha</strong>
+            <strong>14. Conversa Trancada com Senha</strong>
             <span>Oculta a prévia na Home e exige senha dedicada ao abrir o chat.</span>
-          </div>
-        </div>
-
-        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/15-profile-photo-privacy.png', 'Configurações: 4 Abas Fixas &amp; Visibilidade da Foto de Perfil')">
-          <div class="shot-img-wrap">
-            <img src="screenshots/15-profile-photo-privacy.png" alt="Privacidade de Foto de Perfil OnionTalk" width="360" height="780" loading="lazy" />
-          </div>
-          <div class="shot-caption">
-            <strong>9. Privacidade da Foto de Perfil</strong>
-            <span>Escolha entre Público, Contatos, Amigos (Favoritos) ou Privado.</span>
-          </div>
-        </div>
-
-        <div class="shot-card" data-category="v142" onclick="openScreenshotModal('screenshots/16-autolock-15s-security.png', 'Segurança: Bloqueio Automático de 15s (Mesmo Fechado) &amp; Biometria')">
-          <div class="shot-img-wrap">
-            <img src="screenshots/16-autolock-15s-security.png" alt="Auto-Lock 15s e Biometria OnionTalk" width="360" height="780" loading="lazy" />
-          </div>
-          <div class="shot-caption">
-            <strong>10. Auto-Lock 15s &amp; Biometria</strong>
-            <span>Tranca após 15s mesmo com app fechado e leitura única de digital.</span>
           </div>
         </div>
 
@@ -1895,7 +1959,7 @@
             <img src="screenshots/17-donate-relay-nodes.png" alt="Apoie o Projeto e Suba um Servidor OnionTalk" width="360" height="780" loading="lazy" />
           </div>
           <div class="shot-caption">
-            <strong>11. Doações &amp; Guia Relay Docker</strong>
+            <strong>15. Doações &amp; Guia Relay Docker</strong>
             <span>Cartões responsivos BTC/ETH/SOL com QR Code e comando Docker.</span>
           </div>
         </div>
@@ -1905,18 +1969,8 @@
             <img src="screenshots/03a-add-onion-contact-en.png" alt="Adicionar Contato OnionTalk" width="360" height="780" loading="lazy" />
           </div>
           <div class="shot-caption">
-            <strong>12. Adição Rápida de Contato</strong>
-            <span>Fecha o modal imediatamente e abre a conversa criptografada.</span>
-          </div>
-        </div>
-
-        <div class="shot-card" data-category="vault" onclick="openScreenshotModal('screenshots/01-vault-unlock-en.png', 'Cofre Local SQLCipher AES-256 &amp; Proteção contra Coação')">
-          <div class="shot-img-wrap">
-            <img src="screenshots/01-vault-unlock-en.png" alt="Tela de Desbloqueio SQLCipher OnionTalk" width="360" height="780" loading="lazy" />
-          </div>
-          <div class="shot-caption">
-            <strong>13. Cofre SQLCipher AES-256</strong>
-            <span>Desbloqueio local com limite de tentativas e wipe anti-forense.</span>
+            <strong>16. Adição Rápida de Contato</strong>
+            <span>Abre direto pelo link de convite e inicia a conversa criptografada.</span>
           </div>
         </div>
 
@@ -1925,38 +1979,8 @@
             <img src="screenshots/02-create-identity-en.png" alt="Criar Identidade Anônima OnionTalk" width="360" height="780" loading="lazy" />
           </div>
           <div class="shot-caption">
-            <strong>14. Criação Zero-PII</strong>
+            <strong>17. Criação Zero-PII</strong>
             <span>Geração offline de par de chaves Ed25519 + X25519 em segundos.</span>
-          </div>
-        </div>
-
-        <div class="shot-card" data-category="vault" onclick="openScreenshotModal('screenshots/07-profile-qr-identity-en.png', 'Identidade Criptográfica Ed25519 &amp; QR Code P2P')">
-          <div class="shot-img-wrap">
-            <img src="screenshots/07-profile-qr-identity-en.png" alt="Identidade QR Code OnionTalk" width="360" height="780" loading="lazy" />
-          </div>
-          <div class="shot-caption">
-            <strong>15. Identidade Pura (@hash)</strong>
-            <span>Chave Ed25519 + QR Code e foto sanitizada sem EXIF/GPS.</span>
-          </div>
-        </div>
-
-        <div class="shot-card" data-category="chat" onclick="openScreenshotModal('screenshots/04-chat-pablo-bruna-en.png', 'Chat Ponta-a-Ponta X25519 + ML-KEM-768 (PQC) + ChaCha20-Poly1305')">
-          <div class="shot-img-wrap">
-            <img src="screenshots/04-chat-pablo-bruna-en.png" alt="Chat Criptografado OnionTalk" width="360" height="780" loading="lazy" />
-          </div>
-          <div class="shot-caption">
-            <strong>16. Chat E2EE em Tempo Real</strong>
-            <span>Entrega sub-segundo via Long-Poll Rendezvous sobre Tor v3.</span>
-          </div>
-        </div>
-
-        <div class="shot-card" data-category="chat" onclick="openScreenshotModal('screenshots/05-chat-bruna-pablo-en.png', 'Visão Espelhada do Destinatário (Entrega P2P em Tempo Real)')">
-          <div class="shot-img-wrap">
-            <img src="screenshots/05-chat-bruna-pablo-en.png" alt="Recebimento P2P OnionTalk" width="360" height="780" loading="lazy" />
-          </div>
-          <div class="shot-caption">
-            <strong>17. Recebimento Espelhado P2P</strong>
-            <span>Confirmação criptográfica de leitura (✓✓) e timers efêmeros.</span>
           </div>
         </div>
 
@@ -2078,16 +2102,16 @@
     <section class="section" id="malha">
       <div class="section-header-row">
         <div class="section-header">
-          <span class="section-eyebrow">MALHA AUTO-GOSSIP PEX V2 · 20 NÓS ATIVOS EM 8 PAÍSES (v=31) + AUTO-JOIN</span>
+          <span class="section-eyebrow">MALHA AUTO-GOSSIP PEX V2 · 35 NÓS ATIVOS EM 8 PAÍSES (v=32) + AUTO-JOIN</span>
           <h2>Infraestrutura Global Descentralizada (.onion) &amp; Relay Android</h2>
-          <p>O OnionTalk sincroniza automaticamente entre 20 relays Tor v3 distribuídos em 8 países (Brasil, EUA, França, Alemanha, Rússia, Singapura, Japão e China) com Zero-Touch Auto-Join 100% anônimo (Zero-Leak de IP, aparelho ou localização). Suba um novo nó em 10 segundos no Docker ou diretamente dentro do seu celular Android como aplicativo secundário.</p>
+          <p>O OnionTalk sincroniza automaticamente entre 35 relays Tor v3 distribuídos em 8 países (Brasil, EUA, França, Alemanha, Rússia, Singapura, Japão e China) com Zero-Touch Auto-Join 100% anônimo (Zero-Leak de IP, aparelho ou localização). Suba um novo nó em 10 segundos no Docker ou diretamente dentro do seu celular Android como aplicativo secundário.</p>
         </div>
 
         <div class="filter-pills">
-          <button type="button" class="filter-pill active" aria-pressed="true" onclick="filterMeshNodes('all', this)">Todos (20 Nós)</button>
-          <button type="button" class="filter-pill" aria-pressed="false" onclick="filterMeshNodes('BR', this)">Brasil (3)</button>
-          <button type="button" class="filter-pill" aria-pressed="false" onclick="filterMeshNodes('US', this)">EUA (8)</button>
-          <button type="button" class="filter-pill" aria-pressed="false" onclick="filterMeshNodes('FR', this)">França (3)</button>
+          <button type="button" class="filter-pill active" aria-pressed="true" onclick="filterMeshNodes('all', this)">Todos (35 Nós)</button>
+          <button type="button" class="filter-pill" aria-pressed="false" onclick="filterMeshNodes('BR', this)">Brasil (5)</button>
+          <button type="button" class="filter-pill" aria-pressed="false" onclick="filterMeshNodes('US', this)">EUA (20)</button>
+          <button type="button" class="filter-pill" aria-pressed="false" onclick="filterMeshNodes('FR', this)">França (4)</button>
           <button type="button" class="filter-pill" aria-pressed="false" onclick="filterMeshNodes('RU', this)">Rússia (2)</button>
           <button type="button" class="filter-pill" aria-pressed="false" onclick="filterMeshNodes('DE', this)">Alemanha (1)</button>
           <button type="button" class="filter-pill" aria-pressed="false" onclick="filterMeshNodes('SG', this)">Singapura (1)</button>
@@ -2102,7 +2126,7 @@
           <div>
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px;">
               <span class="section-eyebrow" style="margin-bottom: 0;">DOCKER HUB ALL-IN-ONE · &lt; 60 MB RAM</span>
-              <span class="badge-yes">Auto-Join Zero-Leak · v=31</span>
+              <span class="badge-yes">Auto-Join Zero-Leak · v=32</span>
             </div>
             <h3 style="margin-bottom: 6px;">1. Subir Nó Relay em Servidor / Container</h3>
             <p style="font-size: 13.5px;">A imagem <code>eriktonon/oniontalk:latest</code> empacota Tor 0.4.9.14 + Gunicorn Zero-Trust Relay + Auto-Join paralelo. Entra na malha automaticamente via Tor v3 sem expor IP, latitude/longitude ou abrir portas no firewall.</p>
@@ -2128,7 +2152,7 @@
               <span class="badge-yes" style="border-color: rgba(6, 182, 212, 0.4); color: #67E8F9; background: rgba(6, 182, 212, 0.12);">Relay Node · Zero-Leak </span>
             </div>
             <h3 style="margin-bottom: 6px;">2. Subir Nó Relay Dentro do Android (App Secundário)</h3>
-            <p style="font-size: 13.5px;">Transforme qualquer celular Android (4G/5G/Wi-Fi, mesmo atrás de CGNAT) em um servidor <strong>Tor v3 Hidden Service</strong> soberano (<code>127.0.0.1:9055 &rarr; :8088</code>). Instala lado a lado com o mensageiro principal sem conflito de portas, permite escolher apenas o Nome do Nó e faz Auto-Join 100% anônimo nos 20 seeds (zero coleta de IP, modelo do celular ou latitude/longitude).</p>
+            <p style="font-size: 13.5px;">Transforme qualquer celular Android (4G/5G/Wi-Fi, mesmo atrás de CGNAT) em um servidor <strong>Tor v3 Hidden Service</strong> soberano (<code>127.0.0.1:9055 &rarr; :8088</code>). Instala lado a lado com o mensageiro principal sem conflito de portas, permite escolher apenas o Nome do Nó e faz Auto-Join 100% anônimo nos 35 seeds (zero coleta de IP, modelo do celular ou latitude/longitude).</p>
           </div>
           <div>
             <div class="code-snippet mono" style="margin-bottom: 12px; color: #67E8F9;">
@@ -2141,7 +2165,7 @@
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>
                 </svg>
-                <span>Baixar OnionTalk Relay APK</span>
+                <span>Baixar OnionTalk Relay APK (v1.7.4)</span>
               </a>
             </div>
           </div>
@@ -2598,7 +2622,7 @@
       const banner = document.getElementById("sim-banner");
       lockBadge.style.borderColor = "#F59E0B";
       lockBadge.style.color = "#FCD34D";
-      lockBadge.innerHTML = "<span>LOCKDOWN ATIVO</span>";
+      lockBadge.textContent = "LOCKDOWN ATIVO";
       banner.textContent = "TRAVA ANTI-COAÇÃO ATIVA · Biometria desarmada por 1 ciclo (Exige Senha)";
       document.getElementById("wire-packet-log").textContent =
         "KEYSTORE_GUARD: manual_lockdown_active=true · BiometricPrompt.CryptoObject disarmed";
@@ -2756,7 +2780,7 @@
 
     function openScreenshotModal(src, title) {
       document.getElementById("modal-shot-img").src = src;
-      document.getElementById("modal-shot-title").innerHTML = title;
+      document.getElementById("modal-shot-title").textContent = title;
       document.getElementById("screenshot-modal").classList.add("open");
     }
 
@@ -2820,11 +2844,11 @@
         nav_comp: "Comparativo",
         nav_priv: "Privacidade",
         cta_download: "Google Play",
-        hero_badge: "20 relays Tor v3 ativos em 8 países",
+        hero_badge: "35 relays Tor v3 ativos em 8 países",
         hero_title: "Mensageiro privado,<br/><span>sem número de telefone.</span>",
         hero_lead: "O OnionTalk funciona sobre a rede Tor v3, sem servidor central. Não pede telefone nem e-mail, não guarda seus contatos na nuvem e esconde seu IP. Cada mensagem é cifrada no seu aparelho e entregue por relays que qualquer pessoa pode operar.",
         hero_btn_play: "Baixar no Google Play",
-        hero_btn_apk: "APK Universal Assinado",
+        hero_btn_apk: "APK Universal Assinado (v1.7.4)",
         hero_btn_node: "Subir Relay Docker (<60MB)",
         hero_btn_policy: "Política de Privacidade",
         hero_more: "Outras formas de instalar e rodar um relay",
@@ -2849,11 +2873,11 @@
         nav_comp: "Comparison",
         nav_priv: "Privacy",
         cta_download: "Google Play",
-        hero_badge: "20 Tor v3 relays active in 8 countries",
+        hero_badge: "35 Tor v3 relays active in 8 countries",
         hero_title: "Private messenger,<br/><span>no phone number.</span>",
         hero_lead: "OnionTalk runs on the Tor v3 network, with no central server. It asks for no phone number or email, keeps no contact list in the cloud, and hides your IP address. Every message is encrypted on your device and delivered through relays anyone can run.",
         hero_btn_play: "Get it on Google Play",
-        hero_btn_apk: "Signed Universal APK",
+        hero_btn_apk: "Signed Universal APK (v1.7.4)",
         hero_btn_node: "Run Docker Relay (<60MB)",
         hero_btn_policy: "Privacy Policy",
         hero_more: "More ways to install or run a relay",
@@ -2878,11 +2902,11 @@
         nav_comp: "Comparativa",
         nav_priv: "Privacidad",
         cta_download: "Google Play",
-        hero_badge: "20 relays Tor v3 activos en 8 países",
+        hero_badge: "35 relays Tor v3 activos en 8 países",
         hero_title: "Mensajería privada,<br/><span>sin número de teléfono.</span>",
         hero_lead: "OnionTalk funciona sobre la red Tor v3, sin servidor central. No pide teléfono ni correo, no guarda tus contactos en la nube y oculta tu IP. Cada mensaje se cifra en tu dispositivo y se entrega mediante relays que cualquiera puede operar.",
         hero_btn_play: "Descargar en Google Play",
-        hero_btn_apk: "APK Universal Firmado",
+        hero_btn_apk: "APK Universal Firmado (v1.7.4)",
         hero_btn_node: "Desplegar Relay Docker (<60MB)",
         hero_btn_policy: "Política de Privacidad",
         hero_more: "Más formas de instalar o ejecutar un relay",
@@ -2907,11 +2931,11 @@
         nav_comp: "Сравнение",
         nav_priv: "Конфиденциальность",
         cta_download: "Google Play",
-        hero_badge: "20 узлов Tor v3 активны в 8 странах",
+        hero_badge: "35 узлов Tor v3 активны в 8 странах",
         hero_title: "Приватный мессенджер<br/><span>без номера телефона.</span>",
         hero_lead: "OnionTalk работает в сети Tor v3, без центрального сервера. Он не требует номер телефона или e-mail, не хранит ваши контакты в облаке и скрывает ваш IP. Каждое сообщение шифруется на устройстве и доставляется через узлы, которые может запустить любой.",
         hero_btn_play: "Скачать в Google Play",
-        hero_btn_apk: "Подписанный APK",
+        hero_btn_apk: "Подписанный APK (v1.7.4)",
         hero_btn_node: "Запустить Docker-узел (<60МБ)",
         hero_btn_policy: "Политика конфиденциальности",
         hero_more: "Другие способы установки и запуск узла",
@@ -2931,6 +2955,19 @@
       }
     };
 
+    function setSafeStaticMarkup(el, markup) {
+      const parsed = new DOMParser().parseFromString(String(markup || ""), "text/html");
+      parsed.body.querySelectorAll("script,iframe,object,embed").forEach(n => n.remove());
+      parsed.body.querySelectorAll("*").forEach(node => {
+        Array.from(node.attributes).forEach(attr => {
+          if (/^on/i.test(attr.name) || (/^(href|src)$/i.test(attr.name) && /^\s*javascript:/i.test(attr.value))) {
+            node.removeAttribute(attr.name);
+          }
+        });
+      });
+      el.replaceChildren(...parsed.body.childNodes);
+    }
+
     function setLanguage(lang) {
       ["pt", "en", "es", "ru"].forEach(code => {
         const btn = document.getElementById("btn-" + code);
@@ -2940,7 +2977,7 @@
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         if (dict[key]) {
-          el.innerHTML = dict[key];
+          setSafeStaticMarkup(el, dict[key]);
         }
       });
       switchPromoVideo(lang === "pt" ? "v142-pt" : "v142-en");
