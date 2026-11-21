@@ -18,22 +18,22 @@
 
 ---
 
-## 🚀 What's New in `v1.7.5` (`versionCode = 71` / Build 71) & Relay Node `v1.7.5` (`Build 24` • 100% Rust Native `oniontalk-relay-rs`) — Zero-RTT Audio/Message Unlock Staging, UI-First Anti-Race Ordering, Unified Onion Mesh Group Sheet & 35-Node Mesh (`STRIX 31/31`)
+## 🚀 What's New in `v1.8.0` (`versionCode = 73` / Build 73) & Relay Node `v1.8.0` (`Build 26` • 100% Rust Native `oniontalk-relay-rs`) — Zero-RTT Audio/Message Unlock Staging, UI-First Anti-Race Ordering, Unified Onion Mesh Group Sheet & 35-Node Mesh (`STRIX 40/40`)
 
-- **📦 Official Google Play Open Beta, Direct Signed APK Downloads & Web Container (`v1.7.5` — Build 71)**:
+- **📦 Official Google Play Open Beta, Direct Signed APK Downloads & Web Container (`v1.8.0` — Build 73)**:
   - **▶️ Google Play Store (Official Open Beta)**: [**OnionTalk – Apps no Google Play**](https://play.google.com/store/apps/details?id=org.oniontalk.messenger)
   - **🌐 Official Website & Privacy Policy**: [**https://oniontalk.co/**](https://oniontalk.co/)
-  - **Main Messenger APK (`org.oniontalk.messenger` `v1.7.5` Build 71)**: [**Download `OnionTalk.apk` (latest)**](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/SHA256SUMS.txt))
-  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.7.5` Build 24)**: [**Download `OnionTalk-RelayNode.apk` (latest)**](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/OnionTalk-RelayNode.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/SHA256SUMS.txt))
+  - **Main Messenger APK (`org.oniontalk.messenger` `v1.8.0` Build 73)**: [**Download `OnionTalk.apk` (latest)**](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/SHA256SUMS.txt))
+  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.8.0` Build 26)**: [**Download `OnionTalk-RelayNode.apk` (latest)**](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/OnionTalk-RelayNode.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/SHA256SUMS.txt))
   - **🐳 Desktop & Web Container + Embedded Tor v3 Relay (`Windows / Linux / macOS`)**: [**`eriktonon/oniontalk-web:latest`**](https://hub.docker.com/r/eriktonon/oniontalk-web) ![Docker tag](https://img.shields.io/docker/v/eriktonon/oniontalk-web?sort=semver&label=tag&style=flat-square) — Self-contained Rust Black-Box Web Messenger + active Tor v3 Hidden Service Relay listening on `127.0.0.1:8420`.
-  - **🦀 100% Rust Native Relay Container (`oniontalk-relay-rs v1.7.5`)**: [**`eriktonon/oniontalk:latest`**](https://hub.docker.com/r/eriktonon/oniontalk) — Zero-Python Tokio/Axum + Sharded `DashMap` relay node (`11.9 MiB` RAM, `-92%` footprint) with isochronous `/api/v1/voice/stream`.
+  - **🦀 100% Rust Native Relay Container (`oniontalk-relay-rs v1.8.0`)**: [**`eriktonon/oniontalk:latest`**](https://hub.docker.com/r/eriktonon/oniontalk) — Zero-Python Tokio/Axum + Sharded `DashMap` relay node (`11.9 MiB` RAM, `-92%` footprint) with isochronous `/api/v1/voice/stream`.
 
-| **1. OnionVoice V1 PQC Call (`v1.7.5`)** | **2. Sovereign PQC Groups (1 Free up to 50)** | **3. 100% Rust Relay Node & 35-Node Mesh** |
+| **1. OnionVoice V1 PQC Call (`v1.8.0`)** | **2. Sovereign PQC Groups (1 Free up to 50)** | **3. 100% Rust Relay Node & 35-Node Mesh** |
 | :---: | :---: | :---: |
 | <img src="./screenshots/20-onionvoice-pqc-call-v157.png" width="260" alt="OnionVoice V1 PQC Voice Call" /> | <img src="./screenshots/21-pqc-groups-founder-v157.png" width="260" alt="Sovereign PQC Groups" /> | <img src="./screenshots/18-relay-node-android-v101.png" width="260" alt="OnionTalk Relay Rust Engine" /> |
-| *Sub-500ms (445ms) Hi-Fi PQC voice calls over Tor v3 with 99.31% waveform fidelity (`SNR = 17.75 dB`, `0ms` gap) & Round-Robin 480ms batching.* | *1 Free Post-Quantum Group up to 50 members (`ML-KEM-768`), Zero-Leak Invite Deep-Links (`#fragment`) & unified Onion Mesh group sheet.* | *`oniontalk-relay-rs v1.7.5` (`11.9 MiB` RAM, 0% Python) synchronized across 35 global `.onion` v3 nodes.* |
+| *Sub-500ms (445ms) Hi-Fi PQC voice calls over Tor v3 with 99.31% waveform fidelity (`SNR = 17.75 dB`, `0ms` gap) & Round-Robin 480ms batching.* | *1 Free Post-Quantum Group up to 50 members (`ML-KEM-768`), Zero-Leak Invite Deep-Links (`#fragment`) & unified Onion Mesh group sheet.* | *`oniontalk-relay-rs v1.8.0` (`11.9 MiB` RAM, 0% Python) synchronized across 35 global `.onion` v3 nodes.* |
 
-- **🛡️ Key Cryptographic, Voice & P2P Mesh Breakthroughs in `v1.7.5` (`Build 71` & Rust Relay `v1.7.5` • `STRIX 31/31`)**:
+- **🛡️ Key Cryptographic, Voice & P2P Mesh Breakthroughs in `v1.8.0` (`Build 73` & Rust Relay `v1.8.0` • `STRIX 40/40`)**:
   1. **Sovereign Post-Quantum Encrypted Groups (`PQC Groups`) & Anti-Spam Proof-of-Community**: End-to-end encrypted multi-party group chats over Tor v3 with zero central member servers. Group creation unlocks automatically via organic local proof-of-community (`3+ mutual contacts` + `5+ days of vault maturity`, evaluated 100% locally) or immediately via an offline `Ed25519`-signed **`FounderPass`** certificate granted to community Relay Node Operators (`2+ hours active uptime`) or voluntary crypto supporters.
   2. **In-RAM Image Blur & Pixelation Studio + Zero-EXIF Sanitizer**: Built-in tactile brush editor (`Gaussian Blur` & `Mosaic Pixelate`) operating strictly in volatile RAM before encryption, combined with 100% EXIF/GPS header stripping and Least Significant Bit (`LSB`) anti-fingerprinting jitter.
   3. **Hybrid Post-Quantum Cryptography (`__ENC_PQC_KYBER768_X25519_V3__`)**: Combines classical **Dual X25519 ECDH** with **NIST FIPS 203 ML-KEM-768 (`Kyber-768`)** key encapsulation via `HKDF-SHA256` + `ChaCha20-Poly1305 AEAD` + `Ed25519` outer envelope signatures to protect against *Harvest Now, Decrypt Later* quantum adversaries.
@@ -41,7 +41,7 @@
   5. **35-Node Zero-SPOF Global Mesh (`v=32`), S/Kademlia XOR Distance Routing & Blinded Poller Affinity**: All **35 global `.onion` v3 relays** route by XOR distance (`SHA-256(peer_onion) ^ SHA-256(recipient_hash)`) with zero-knowledge RAM-only rendezvous affinity (`active_pollers`, `TTL 90s`, zero logs) and **100% anonymized synthetic node coordinates (Zero IP / Zero Cloud Provider Exposure)**.
   6. **GossipSub v1.2 `IHAVE` / `IDONTWANT` Deduplication & Mandatory `SHA-256` Media Integrity**: Relays announce `POST /gossip/ihave` metadata before forwarding payloads `> 1024 bytes` (cutting redundant Tor mesh bandwidth by **~70%**) and verify `SHA-256` Merkle hashes on all voice notes, images, and attachments prior to rendering.
 ---
-## 🚀 What's New in `v1.4.2` (`versionCode = 22` / Build 24) — Anti-Exploit Media Firewall, Hardware-Backed KeyStore Vault, Deflate Super-Compression & Warm Tor Pool — Password-Locked Messages & Chats, Unified Long-Press Menu, Profile Photo Privacy, 15s Auto-Lock & Official Video Suite
+## 🚀 What's New in `v1.4.2` (`versionCode = 22` / Build 26) — Anti-Exploit Media Firewall, Hardware-Backed KeyStore Vault, Deflate Super-Compression & Warm Tor Pool — Password-Locked Messages & Chats, Unified Long-Press Menu, Profile Photo Privacy, 15s Auto-Lock & Official Video Suite
 
 - 📦 Older binaries are not mirrored here. Latest signed build: [GitHub Releases](https://github.com/onion-talk/oniontalk-demo/releases).
 - **🎬 Official `v1.4.2` Promotional & Feature Walkthrough Videos**:
@@ -49,7 +49,7 @@
   - [**▶ Watch Official Promo v1.4.2 (English 1080p)**](https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-v1.4.1-Promo-Official-EN.mp4)
   - [**▶ Watch Complete Feature & Messaging Walkthrough v1.4.2 (PT-BR 1080p)**](https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-v1.4.1-Demo-Funcoes-PT.mp4)
   - [**▶ Watch Vertical Reels / Shorts / TikTok 9:16 Spot (1080x1920)**](https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-v1.4.1-Reels-Shorts-PT.mp4)
-- **🔐 Key Security & UX Improvements in `v1.4.2` (`Build 24`)**:
+- **🔐 Key Security & UX Improvements in `v1.4.2` (`Build 26`)**:
   1. **Password-Protected Individual Messages (`__LOCKED_MSG_V1__`)**: Lock any message in a conversation with a dedicated secret password (`PBKDF2-HMAC-SHA256` + `AES-256-GCM`) and reliable first-try session caching (`unlockedMessageCache`) so unlocked messages stay readable throughout the active chat session.
   2. **Password-Protected Conversations**: Lock entire conversations with a dedicated password, masking message previews on the Home screen (`🔒 Conversa trancada com senha`).
   3. **Clean Conversation Rows & Unified Long-Press Action Menu**: Removed external star and pencil icons from conversation rows; long-pressing any conversation opens a unified action menu to **Favorite / Pin to Top (`📌`)**, **Rename Contact (`✏️`)**, or trigger **Bilateral Anti-Forensic Burn (`🔥`)**.
@@ -63,10 +63,10 @@
 | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/11-locked-message-e2ee.png" width="260" alt="Password Locked Message Bubble" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/12-unlock-message-modal.png" width="260" alt="Unlock Message Modal" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/13-locked-chat-pin-home.png" width="260" alt="Clean Home Pinned & Locked Chat" /> |
 | *Per-message AES-256-GCM password lock inside E2EE Tor v3 chat.* | *Unlocks on the first try with incognito keyboard and session cache.* | *Clean conversation list with pinned favorites and locked chat masking.* |
 
-| **4. Lock Entire Conversation Modal** | **5. Profile Photo Privacy (`Build 24`)** | **6. 15s Auto-Lock & Single Biometrics** |
+| **4. Lock Entire Conversation Modal** | **5. Profile Photo Privacy (`Build 26`)** | **6. 15s Auto-Lock & Single Biometrics** |
 | :---: | :---: | :---: |
 | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/14-lock-conversation-modal.png" width="260" alt="Lock Conversation with Password" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/15-profile-photo-privacy.png" width="260" alt="Profile Photo Visibility Settings" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/16-autolock-15s-security.png" width="260" alt="15s Auto-Lock and Biometric Security" /> |
-| *Dedicated conversation password hides Home previews and blocks unauthorized access.* | *4 fixed Settings tabs (`Build 24`) and Public / Contacts / Friends / Private avatar visibility.* | *15s inactivity lock enforced even after app closure + single-flight fingerprint prompt.* |
+| *Dedicated conversation password hides Home previews and blocks unauthorized access.* | *4 fixed Settings tabs (`Build 26`) and Public / Contacts / Friends / Private avatar visibility.* | *15s inactivity lock enforced even after app closure + single-flight fingerprint prompt.* |
 
 ---
 
