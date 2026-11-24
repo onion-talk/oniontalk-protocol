@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <title>Política de Privacidade / Privacy Policy — OnionTalk (org.oniontalk.messenger)</title>
+  <meta name="description" content="Política de Privacidade oficial do aplicativo OnionTalk: Private Tor Chat (org.oniontalk.messenger) na Google Play Store — Coleta Zero de Dados Pessoais (Zero PII), cofre local SQLCipher AES-256 e criptografia pós-quântica sobre Tor v3." />
+  <link rel="canonical" href="https://oniontalk.co/privacy.html" />
+  <style>
+    :root {
+      --bg-page: #070B12;
+      --bg-card: #0E1622;
+      --bg-pill: #132032;
+      --border-subtle: rgba(255, 255, 255, 0.10);
+      --text-primary: #F8FAFC;
+      --text-secondary: #CBD5E1;
+      --text-muted: #94A3B8;
+      --brand-emerald: #10B981;
+      --brand-emerald-hover: #34D399;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-page);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      line-height: 1.68;
+      padding: 32px 16px 64px;
+    }
+    .container { max-width: 920px; margin: 0 auto; }
+    header.policy-header {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-emerald);
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.30);
+      border-radius: 999px;
+      padding: 4px 12px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 28px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--brand-emerald-hover);
+      margin-bottom: 8px;
+    }
+    p { color: var(--text-secondary); margin-bottom: 10px; font-size: 15px; }
+    ul { padding-left: 20px; margin-bottom: 8px; }
+    li { color: var(--text-secondary); margin-bottom: 8px; font-size: 15px; }
+    strong { color: var(--text-primary); }
+    code, .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 6px;
+      border-radius: 5px;
+      color: var(--brand-emerald-hover);
+    }
+    a { color: var(--brand-emerald-hover); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: #6EE7B7; }
+    .lang-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .lang-btn {
+      display: inline-block;
+      background: var(--bg-pill);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 999px;
+    }
+    .clause-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 16px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .summary-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .summary-box span {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    footer {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="container" id="privacy">
+    <header class="policy-header">
+      <span class="eyebrow">Documento Oficial de Conformidade · Google Play Store</span>
+      <h1>Política de Privacidade / Privacy Policy — OnionTalk (<code>org.oniontalk.messenger</code>)</h1>
+      <p>
+        Aplicável ao aplicativo oficial <strong>OnionTalk: Private Tor Chat</strong> (pacote Android <code>org.oniontalk.messenger</code>),
+        ao nó auxiliar <code>org.oniontalk.relaynode</code> e ao cliente Desktop/Web <code>onion-talk-web</code>.
+        Mantido por <strong>OnionTalk Sovereign Privacy Project</strong> · Edição Contínua (<em>Rolling Release</em>).
+      </p>
+      <nav class="lang-nav" aria-label="Idioma da Política de Privacidade">
+        <a class="lang-btn" href="#pt-br">🇧🇷 Português (Brasil)</a>
+        <a class="lang-btn" href="#en-us">🌐 English (Full Text)</a>
+        <a class="lang-btn" href="https://play.google.com/store/apps/details?id=org.oniontalk.messenger" target="_blank" rel="noopener">Google Play Store</a>
+        <a class="lang-btn" href="https://oniontalk.co/">Site Oficial (oniontalk.co)</a>
+      </nav>
+    </header>
+
+    <section class="summary-grid" aria-label="Resumo de Segurança de Dados (Google Play Data Safety)">
+      <div class="summary-box">
+        <span>Coleta de Dados Pessoais</span>
+        <strong>Zero PII Coletado</strong>
+      </div>
+      <div class="summary-box">
+        <span>Compartilhamento com Terceiros</span>
+        <strong>Nenhum (Zero SDKs / Ads)</strong>
+      </div>
+      <div class="summary-box">
+        <span>Criptografia em Trânsito e Repouso</span>
+        <strong>SQLCipher AES-256 + ML-KEM-768</strong>
+      </div>
+      <div class="summary-box">
+        <span>Exclusão de Dados pelo Usuário</span>
+        <strong>Imediata no Próprio App</strong>
+      </div>
+    </section>
+
+    <section id="pt-br">
+      <h2>🇧🇷 Português — Política de Privacidade Oficial (<code>org.oniontalk.messenger</code>)</h2>
+
+      <article class="clause-card">
+        <h3>1. Coleta Zero de Dados Pessoais (Zero PII)</h3>
+        <p>O <strong>OnionTalk: Private Tor Chat</strong> (<code>org.oniontalk.messenger</code>) opera sob o princípio estrito de <strong>Zero-Knowledge (Conhecimento Zero)</strong>. O aplicativo <strong>não solicita, não coleta, não armazena em servidores próprios, não vende e não compartilha</strong> nenhum dado pessoal ou sensível do usuário:</p>
+        <ul>
+          <li><strong>Sem cadastro tradicional:</strong> Nenhum número de telefone, chip SIM, endereço de e-mail, nome civil ou documento governamental é solicitado para criar ou utilizar uma identidade criptográfica.</li>
+          <li><strong>Sem leitura da agenda de contatos:</strong> A lista de contatos do sistema Android nunca é acessada, lida ou sincronizada. Os contatos adicionados manualmente pelo usuário permanecem exclusivamente no cofre local do aparelho.</li>
+          <li><strong>Sem anúncios, rastreadores ou push em nuvem:</strong> O aplicativo não incorpora SDKs de publicidade, Google Analytics, Firebase Analytics, Crashlytics ou Google Cloud Messaging (FCM).</li>
+          <li><strong>Sem coleta de endereço IP ou localização geográfica:</strong> Toda a comunicação trafega exclusivamente por Serviços Ocultos Tor v3 (<code>.onion</code>) via SOCKS5h local (<code>127.0.0.1:9050</code>), sem acesso a GPS ou registro de IP.</li>
+        </ul>
+      </article>
+
+      <article class="clause-card">
+        <h3>2. Criptografia Pós-Quântica Híbrida e Armazenamento Local</h3>
+        <p>Todos os dados gerados pelo usuário permanecem sob sua posse exclusiva no próprio dispositivo:</p>
+        <ul>
+          <li><strong>Em repouso (No dispositivo):</strong> Mensagens, chaves privadas (<code>Ed25519</code>, <code>X25519</code> e <code>ML-KEM-768</code>), contatos e preferências locais são armazenados em banco criptografado <strong>SQLCipher (AES-256)</strong> derivado via <strong>Argon2id (19 MiB, t=2, p=1)</strong>, com mídia e anexos cifrados em repouso (<code>AES-256-GCM</code> / <code>OTATT1</code>) e verificador protegido pelo hardware <strong>AndroidKeyStore (TEE)</strong>.</li>
+          <li><strong>Em trânsito (Na malha Tor v3):</strong> Envelopes são selados ponta-a-ponta com <strong>Criptografia Pós-Quântica Híbrida</strong> (<code>ENVELOPE_V3</code>: <strong>NIST FIPS 203 ML-KEM-768 + Dual X25519 ECDH + HKDF-SHA256 + ChaCha20-Poly1305 AEAD + Assinatura Ed25519</strong>) e Grupos PQC (<code>__GROUP_PQC_MSG_V1__</code>). Os nós de retransmissão jamais têm acesso ao texto claro, chaves de grupo ou metadados de identidade.</li>
+        </ul>
+      </article>
+
+      <article class="clause-card">
+        <h3>3. Permissões do Dispositivo e Serviços em Primeiro Plano</h3>
+        <p>O OnionTalk solicita apenas permissões estritamente necessárias para funcionalidades iniciadas pelo próprio usuário:</p>
+        <ul>
+          <li><strong>Serviço em Primeiro Plano (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_REMOTE_MESSAGING</code> e <code>FOREGROUND_SERVICE_SPECIAL_USE</code>):</strong> Utilizado pelo serviço visível <code>OnionKeepAliveService</code> ("Sempre Conectado") exclusivamente para manter o circuito Tor v3 ativo em segundo plano e entregar mensagens criptografadas P2P sem depender do Google FCM, exibindo notificação permanente com controles imediatos de pausa e renovação de circuito.</li>
+          <li><strong>Câmera (<code>android.permission.CAMERA</code>):</strong> Utilizada apenas localmente quando o usuário escaneia um QR Code de contato ou captura uma imagem instantânea, com remoção integral de metadados EXIF/GPS (<em>Canvas Raw + LSB Jitter</em>) e opção de desfoque em memória RAM antes da criptografia.</li>
+          <li><strong>Microfone (<code>android.permission.RECORD_AUDIO</code>):</strong> Utilizado apenas enquanto o usuário grava uma nota de voz ou realiza chamada de áudio P2P criptografada ponta-a-ponta.</li>
+          <li><strong>Notificações (<code>android.permission.POST_NOTIFICATIONS</code>) e Biometria Opcional (<code>android.permission.USE_BIOMETRIC</code>):</strong> Notificações locais sem envio de conteúdo para terceiros e desbloqueio opcional via <code>AndroidKeyStore</code> local, sem coleta nem exportação de dados biométricos.</li>
+        </ul>
+      </article>
+
+      <article class="clause-card">
+        <h3>4. Retenção, Mensagens Efêmeras e Exclusão de Conta e Dados</h3>
+        <ul>
+          <li><strong>Trânsito Efêmero nos Relays:</strong> Envelopes cifrados ficam retidos apenas temporariamente em memória volátil até a confirmação criptográfica de entrega (<code>ACK</code>) ou expiração máxima de 24 horas, sendo imediatamente descartados.</li>
+          <li><strong>Mensagens Efêmeras e Queima Bilateral (Burn):</strong> O usuário pode configurar autodestruição por mensagem (30s a 24h) ou acionar a Queima Bilateral autenticada para remover o histórico em ambos os dispositivos.</li>
+          <li><strong>Como Excluir Sua Conta e Todos os Dados:</strong> Como o OnionTalk não mantém contas em servidores centrais, o usuário pode excluir instantaneamente e de forma irreversível toda a sua identidade, chaves e banco SQLCipher diretamente no aplicativo em <strong>Configurações &rarr; Privacidade e Segurança &rarr; Excluir Conta</strong> (<em>shredding</em> físico local) ou desinstalando o aplicativo.</li>
+        </ul>
+      </article>
+
+      <article class="clause-card">
+        <h3>5. Público-Alvo e Padrões de Segurança Infantil (18+)</h3>
+        <p>O OnionTalk é destinado exclusivamente ao público adulto (<strong>18 anos ou mais</strong>). O aplicativo não é direcionado a menores de idade, não coleta dados de crianças e mantém política de tolerância zero contra qualquer forma de exploração ou abuso infantil (CSAE).</p>
+      </article>
+
+      <article class="clause-card">
+        <h3>6. Contato de Privacidade e Canais Oficiais</h3>
+        <ul>
+          <li><strong>Responsável / Projeto:</strong> OnionTalk Sovereign Privacy Project (<code>org.oniontalk.messenger</code>)</li>
+          <li><strong>E-mail de Segurança e Privacidade (DPO / Play Store Compliance):</strong> <a href="mailto:security@oniontalk.org">security@oniontalk.org</a></li>
+          <li><strong>Website Oficial:</strong> <a href="https://oniontalk.co/">https://oniontalk.co/</a></li>
+          <li><strong>Canal Oficial:</strong> <a href="https://www.instagram.com/oniontalk.app/" target="_blank" rel="noopener">instagram.com/oniontalk.app (@oniontalk.app)</a></li>
+          <li><strong>Especificação Técnica Open-Source (Relay &amp; Protocolo):</strong> <a href="https://github.com/onion-talk/oniontalk-relay/blob/main/docs/PROTOCOL.md" target="_blank" rel="noopener">github.com/onion-talk/oniontalk-relay (docs/PROTOCOL.md)</a></li>
+        </ul>
+      </article>
+
+      <article class="clause-card">
+        <h3>7. Disclaimers Legais, Isenção de Responsabilidade &amp; Termos de Uso Soberano</h3>
+        <p>Ao instalar ou utilizar qualquer componente do ecossistema <strong>OnionTalk</strong> (<code>org.oniontalk.messenger</code>, <code>org.oniontalk.relaynode</code>, <code>onion-talk-web</code> ou <code>oniontalk-relay</code>), o usuário declara ciência e concordância integral com os seguintes avisos legais:</p>
+        <ul>
+          <li><strong>Status do Código-Fonte e Provisão &ldquo;AS IS&rdquo;:</strong> O servidor Relay federado em Rust (<a href="https://github.com/onion-talk/oniontalk-relay" target="_blank" rel="noopener"><code>oniontalk-relay</code></a>) e a especificação <code>ENVELOPE_V3</code> são open-source sob licença MIT. O código-fonte dos clientes permanece fechado temporariamente durante a fase de estabilização pré-auditoria. O software é fornecido gratuitamente <em>"no estado em que se encontra"</em> (<em>AS IS</em>), sem garantias expressas ou implícitas de disponibilidade ininterrupta na rede Tor v3.</li>
+          <li><strong>Impossibilidade Matemática de Recuperação de Senha ou Descriptografia (<em>Zero-Knowledge</em>):</strong> Por não existirem servidores centrais de contas nem chaves mestras (<em>backdoors</em>), os mantenedores e operadores de relays não possuem capacidade técnica ou matemática para recuperar senhas perdidas, desbloquear mensagens trancadas (<code>__LOCKED_MSG_V1__</code>), reverter exclusões ou descriptografar envelopes em trânsito.</li>
+          <li><strong>Neutralidade de Roteamento e Uso Lícito:</strong> Os nós da malha federada operam apenas como roteadores cegos de pacotes cifrados sobre Serviços Ocultos Tor v3. O usuário é integralmente responsável pelo uso ético e lícito do aplicativo em sua jurisdição.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="en-us">
+      <h2>🌐 English — Official Privacy Policy &amp; Data Safety Disclosure (<code>org.oniontalk.messenger</code>)</h2>
+
+      <article class="clause-card">
+        <h3>1. Zero Personal Data Collection (Zero PII)</h3>
+        <p><strong>OnionTalk: Private Tor Chat</strong> (<code>org.oniontalk.messenger</code>) is engineered strictly on <strong>Zero-Knowledge</strong> principles. We do <strong>not</strong> request, collect, store on remote servers, sell, or share any personally identifiable information (PII):</p>
+        <ul>
+          <li><strong>No phone number, SIM card, or email required:</strong> Cryptographic identities (<code>Ed25519</code> / <code>X25519</code> / <code>ML-KEM-768</code>) are generated locally on the user's device.</li>
+          <li><strong>No contact list access, no ads, no third-party analytics:</strong> Zero advertising SDKs, zero Firebase/Google Analytics, zero Google Cloud Messaging (FCM), and zero IP or GPS tracking. All network traffic routes exclusively over Tor v3 Hidden Services (<code>.onion</code>).</li>
+        </ul>
+      </article>
+
+      <article class="clause-card">
+        <h3>2. Post-Quantum Hybrid Encryption &amp; Local Vault Storage</h3>
+        <ul>
+          <li><strong>At Rest:</strong> Messages, private keys, contacts, and settings remain solely on the user's device inside a <strong>SQLCipher AES-256</strong> encrypted database derived via <strong>Argon2id (19 MiB, t=2, p=1)</strong>, with <code>AES-256-GCM</code> encrypted media and hardware-backed <strong>AndroidKeyStore (TEE)</strong> verification.</li>
+          <li><strong>In Transit:</strong> End-to-end encrypted using <code>ENVELOPE_V3</code> (<strong>NIST FIPS 203 ML-KEM-768 + Dual X25519 ECDH + HKDF-SHA256 + ChaCha20-Poly1305 AEAD + Ed25519 Signature</strong>). Relay nodes never possess decryption keys or plaintext metadata.</li>
+        </ul>
+      </article>
+
+      <article class="clause-card">
+        <h3>3. Device Permissions, Data Retention &amp; Instant Deletion</h3>
+        <ul>
+          <li><strong>Foreground Service (<code>OnionKeepAliveService</code>):</strong> Maintains the local Tor SOCKS5h circuit (<code>127.0.0.1:9050</code>) for real-time P2P message reception without cloud push trackers, displaying a persistent user-controllable notification.</li>
+          <li><strong>Camera, Microphone &amp; Biometrics:</strong> Used strictly locally upon explicit user action (QR scanning, EXIF-stripped instant photos, E2EE voice notes/calls, and optional local <code>AndroidKeyStore</code> biometric unlock).</li>
+          <li><strong>Retention &amp; User Data Deletion:</strong> Encrypted transit envelopes reside in volatile relay RAM only until cryptographic delivery acknowledgment (<code>ACK</code>) or a 24-hour TTL ceiling. Users can permanently shred their entire local account, keys, and SQLCipher database at any time inside the app via <strong>Settings &rarr; Privacy &amp; Security &rarr; Delete Account</strong>, or by uninstalling the app.</li>
+          <li><strong>Target Audience (18+) &amp; Privacy Contact:</strong> Intended exclusively for adults (18+). For privacy or compliance inquiries, contact <a href="mailto:security@oniontalk.org">security@oniontalk.org</a>.</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer>
+      <p>OnionTalk Sovereign Privacy Project · Android Package <code>org.oniontalk.messenger</code> · <a href="https://oniontalk.co/privacy.html">https://oniontalk.co/privacy.html</a> · <a href="mailto:security@oniontalk.org">security@oniontalk.org</a></p>
+    </footer>
+  </main>
+</body>
+</html>
